@@ -82,22 +82,6 @@ app.post('/api/profile', async (req, res) => {
   }
 });
 
-// --- STATIC FILES ---
-
-app.use(express.static(path.join(__dirname, '..', 'public'), {
-  extensions: ['html'],
-  maxAge: '1h',
-  setHeaders(res, filePath){
-    if(filePath.endsWith('index.html')){
-      res.setHeader('Cache-Control', 'no-cache');
-    }
-  }
-}));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
-});
-
 // Iniciar el servidor solo si no estamos en un entorno serverless (como Vercel)
 if (require.main === module) {
   app.listen(PORT, () => {

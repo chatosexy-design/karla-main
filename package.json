@@ -4,8 +4,8 @@
   "description": "NUTRIRUTA - registro y análisis nutricional con semáforo, estadísticas y retos.",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node api/index.js",
+    "dev": "node api/index.js"
   },
   "dependencies": {
     "compression": "^1.7.4",

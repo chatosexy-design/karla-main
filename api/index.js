@@ -5,8 +5,8 @@ const compression = require('compression');
 const mongoose = require('mongoose');
 
 // Importar modelos de datos
-const Log = require('./models/Log');
-const Profile = require('./models/Profile');
+const Log = require('../models/Log');
+const Profile = require('../models/Profile');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -84,7 +84,7 @@ app.post('/api/profile', async (req, res) => {
 
 // --- STATIC FILES ---
 
-app.use(express.static(path.join(__dirname), {
+app.use(express.static(path.join(__dirname, '..', 'public'), {
   extensions: ['html'],
   maxAge: '1h',
   setHeaders(res, filePath){
@@ -95,7 +95,7 @@ app.use(express.static(path.join(__dirname), {
 }));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 });
 
 // Iniciar el servidor solo si no estamos en un entorno serverless (como Vercel)

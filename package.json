@@ -1,0 +1,19 @@
+{
+  "name": "nutriruta",
+  "version": "1.0.0",
+  "description": "NUTRIRUTA - registro y análisis nutricional con semáforo, estadísticas y retos.",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^17.3.1",
+    "express": "^4.19.2",
+    "mongoose": "^9.3.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
